@@ -8,9 +8,7 @@ public class Main {
 
         Random gerador = new Random();
 
-        String valor = null;
-
-        String[] senha = {valor, valor, valor, valor, valor, valor, valor, valor, valor, valor, valor, valor};
+        String[] senha = new String[12];
 
         Scanner sc = new Scanner(System.in);
 
@@ -20,7 +18,7 @@ public class Main {
 
             if (gerarSenha.equalsIgnoreCase("sim")||gerarSenha.equalsIgnoreCase("s")){
                 for (int i = 0; i < 12; i++){
-                    int indice = gerador.nextInt(75);
+                    int indice = gerador.nextInt(caracteres.length);
                     String caracter = caracteres[indice];
                     senha[i] = caracter;
 
@@ -38,8 +36,5 @@ public class Main {
             }
 
         }while (true);
-
-
-
     }
 }
